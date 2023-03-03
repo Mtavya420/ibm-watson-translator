@@ -1,1 +1,1 @@
-# coding-project-template
+Web application for translating English to French, and French to English

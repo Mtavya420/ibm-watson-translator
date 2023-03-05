@@ -16,17 +16,25 @@ language_translator = LanguageTranslatorV3(
 
 language_translator.set_service_url('url')
 
-def englishToFrench(english_text):
+def english_to_french(english_text):
+    """
+    This function takes english text and translate it to french
+    """
     translation = language_translator.translate(
     text=english_text,
     model_id='en-fr').get_result()
-    french_text = translation['translations'][0]['translation']
-    return french_text
+    return translation['translations'][0]['translation']
 
-def frenchToEnglish(french_text):
+def french_to_english(french_text):
+    """
+    This function takes french_text and translate it to english
+    """
     translation = language_translator.translate(
     text=french_text,
     model_id='fr-en').get_result()
-    english_text = translation['translations'][0]['translation']
-    return english_text
-    
+    return translation['translations'][0]['translation']
+
+
+if __name__ == "__main__":
+    res = english_to_french("Hi, My name is Dullah. I am software engineer at Google")
+    print(res)
